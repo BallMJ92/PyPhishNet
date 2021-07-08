@@ -102,7 +102,7 @@ class Automated_Classifier:
                 return self.spam
             elif classify == "LEGITIMATE/SPAM":
                 # Check to determine if all email addresses in header are internal
-                if len(email_addresses) == len([email for email in email_addresses if "@gazprom-mt.com" in email]):
+                if len(email_addresses) == len([email for email in email_addresses if "ADD_LEGITIMATE_DOMAIN_HERE" in email]):
                     #Check to determine if all IPs are internal
                     if len(ip_addresses) == len([ip for ip in ip_addresses if "10." in ip[0:2]]):
                         self.save_file(self.export_file + str(files[incident]), self.legitimate)
