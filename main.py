@@ -26,20 +26,13 @@ class Automated_Classifier:
         # removing empty elements in list
         header_data = [item.strip() for item in header_data if item != '']
         return header_data
+    
     def save_file(self, file_name, data):
         with open(file_name, "w") as file:
             file.write(data)
             file.close()
+            
     def main(self):
-        """
-        files = [file for file in os.listdir('.') if os.path.isfile(file)]
-        files = [name for name in files if str('.txt') in name]
-        files = [keyword for keyword in files if
-                 str('classification_') not in keyword and str('Human Intervention Required.txt') not in keyword]
-        for incident in range(0, len(files)):
-            header = self.open_file(files[incident])
-            # body = self.open_file(self.body_file)
-        """
         header = sys.argv[1:]
         # Extracting data from header to determine reputation
         try:
@@ -125,6 +118,10 @@ class Automated_Classifier:
             
             return self.error2             
         time.sleep(2)
+        
+        
+        
+        
 if __name__ == "__main__":
     ac = Automated_Classifier()
     ac.main()
